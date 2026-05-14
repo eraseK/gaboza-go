@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: gaboja-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: gaboja
+      POSTGRES_USER: gaboja
+      POSTGRES_PASSWORD: gaboja1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - gaboja_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  gaboja_postgres_data:
